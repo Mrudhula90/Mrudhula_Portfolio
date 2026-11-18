@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official acting portfolio of Mrudhula Reddy.">
+  <title>Mrudhula Reddy | Actor Portfolio</title>
+  <style>
+    :root {
+      --bg: #101010;
+      --panel: #191919;
+      --text: #f5f1eb;
+      --muted: #b9b1a7;
+      --gold: #c9a66b;
+      --line: rgba(255,255,255,.12);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(16,16,16,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: var(--serif); font-size: 21px; letter-spacing: .04em; }
+    .brand span { color: var(--gold); }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .navlinks a:hover, .text-link:hover { color: var(--gold); }
+    .hero { min-height: 650px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 55px; padding: 76px 0; }
+    .eyebrow { color: var(--gold); letter-spacing: .24em; text-transform: uppercase; font-size: 11px; font-weight: 700; }
+    h1 { font: 500 clamp(48px, 7vw, 88px)/.98 var(--serif); margin: 18px 0 22px; letter-spacing: -.035em; }
+    h1 span { color: var(--gold); display: block; }
+    .intro { color: var(--muted); max-width: 510px; font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 22px; border: 1px solid var(--gold); color: var(--text); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; transition: .2s; }
+    .btn.primary { background: var(--gold); color: #17130e; font-weight: 700; }
+    .btn:hover { background: #e0c18e; border-color: #e0c18e; color: #17130e; }
+    .hero-photo { position: relative; min-height: 510px; background: #24211d; overflow: hidden; }
+    .hero-photo img { width: 100%; height: 100%; min-height: 510px; object-fit: cover; object-position: center 25%; display: block; filter: saturate(.88); }
+    .hero-photo:after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.25); pointer-events: none; }
+    section { padding: 92px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 36px; }
+    h2 { font: 500 clamp(34px, 5vw, 54px)/1.05 var(--serif); margin: 10px 0 0; }
+    .section-note { color: var(--muted); max-width: 420px; font-size: 14px; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: start; }
+    .about-mark { font: italic 28px/1.25 var(--serif); color: var(--gold); max-width: 300px; }
+    .about-copy { color: var(--muted); font-size: 16px; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); margin-top: 35px; border: 1px solid var(--line); }
+    .fact { background: var(--bg); padding: 20px; }
+    .fact strong { display: block; color: var(--gold); font: 22px var(--serif); margin-bottom: 5px; }
+    .fact span { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .gallery figure { margin: 0; overflow: hidden; background: var(--panel); aspect-ratio: 3/4; }
+    .gallery img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s; }
+    .gallery figure:hover img { transform: scale(1.035); }
+    .video-panel { background: var(--panel); border: 1px solid var(--line); padding: 35px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+    .video-panel p { color: var(--muted); margin-bottom: 0; }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill { padding: 25px; border: 1px solid var(--line); background: var(--panel); }
+    .skill h3 { font: 22px var(--serif); margin: 0 0 8px; color: var(--gold); }
+    .skill p { margin: 0; color: var(--muted); font-size: 14px; }
+    .contact { background: #171512; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; color: var(--muted); }
+    .contact-links a { width: fit-content; border-bottom: 1px solid var(--gold); padding-bottom: 3px; }
+    footer { padding: 25px 0; color: #817a72; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 17px 0; }
+      .navlinks { gap: 12px 17px; font-size: 10px; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding: 55px 0; }
+      .hero-photo, .hero-photo img { min-height: 430px; }
+      .hero-photo { max-height: 580px; }
+      section { padding: 66px 0; }
+      .section-head, .contact-grid { display: block; }
+      .section-note { margin-top: 18px; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+      .facts, .skills { grid-template-columns: 1fr; }
+      .video-panel { grid-template-columns: 1fr; padding: 25px; }
+      .contact-links { margin-top: 25px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">MRUDHULA <span>REDDY</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#gallery">Gallery</a><a href="#showreel">Showreel</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero" id="home" style="border:0">
+      <div>
+        <div class="eyebrow">Actor • Hyderabad, India</div>
+        <h1>Mrudhula <span>Reddy</span></h1>
+        <p class="intro">An actor building my journey through performance, expression and storytelling. Explore my portfolio, selected photographs and acting work.</p>
+        <div class="actions">
+          <a class="btn primary" href="#gallery">View Portfolio</a>
+          <a class="btn" href="#contact">Contact for Casting</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- Update this filename if your preferred cover photo is different. -->
+        <img src="images\20.jpg" alt="Mrudhula Reddy" width="300">
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div><div class="eyebrow">A little about me</div><h2>About Mrudhula</h2></div>
+        <p class="section-note">A concise introduction for casting teams and creative collaborators.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-mark">“Every character is a new world to explore.”</div>
+        <div class="about-copy">
+          <p>I am Mrudhula Reddy, an aspiring actor based in Hyderabad. I am passionate about performance, learning new characters and bringing stories to life on screen.</p>
+          <p>This portfolio brings together my photographs, acting clips and selected project details. I welcome suitable opportunities in films, web series, advertisements and other screen projects.</p>
+          <div class="facts">
+            <div class="fact"><span>Based in</span><strong>Hyderabad</strong></div>
+            <div class="fact"><span>Profession</span><strong>Actor</strong></div>
+            <div class="fact"><span>Language</span><strong>Telugu</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head">
+        <div><div class="eyebrow"></div><h2>Portfolio Gallery</h2></div>
+        <p class="section-note"></p>
+      </div>
+      <div class="gallery">
+
+        <figure><img src="images\43.JPG" alt="Mrudhula Reddy portfolio photograph" loading="lazy"></figure>
+        <figure><img src="images\7.jpg" alt="Mrudhula Reddy portfolio photograph" loading="lazy"></figure>
+        <figure><img src="images\23.jpg" alt="Mrudhula Reddy portfolio photograph" loading="lazy"></figure>
+        <figure><img src="images\36.jpg" alt="Mrudhula Reddy portfolio photograph" loading="lazy"></figure>
+        <figure><img src="images\14.jpg" alt="Mrudhula Reddy portfolio photograph" loading="lazy"></figure>
+        
+        
+      </div>
+    </section>
+
+    <section id="showreel">
+      <div class="section-head">
+        <div><div class="eyebrow">On-screen work</div><h2>Acting Showreel</h2></div>
+      </div>
+      <div class="video-panel">
+        <div>
+          <div class="eyebrow">Videos & audition clips</div>
+          <h3 style="font:28px Georgia,serif;margin:8px 0">Watch my performances</h3>
+          <a href="https://youtu.be/FkqeIoZ_Fiw" target="_blank">
+           Introduction Video
+          </a><br>
+
+        
+          <a href="https://youtu.be/U23U7-o89R8" target="_blank">
+           Monologue
+          </a><br>
+
+          <a href="https://youtu.be/JcZ30p-37ww?si=Ov1JkXdCxuij1DtP" target="_blank">
+           Short Film(Typing)
+          </a><br>
+
+          <a href="https://youtu.be/fpVXSrYehfo" target="_blank">
+           Short Film(Cupid Mom)
+          </a><br>
+         
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <div><div class="eyebrow">Performance profile</div><h2>Skills & Details</h2></div>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>Languages</h3><p>Telugu, English, Kannada and Basic Hindi.</p></div>
+        <div class="skill"><h3>Performance</h3><p>Acting, expressions, dialogue practice and character preparation.</p></div>
+        <div class="skill"><h3>Dance</h3><p>Kuchipudi and Bharthanatyam.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div><div class="eyebrow">Let's work together</div><h2>Available for<br>casting opportunities.</h2></div>
+      <div class="contact-links">
+        <a>📞:+91 6300892714</a>
+        <a href="mailto:mrudhulaactor@gmail.com">📧:mrudhulaactor@gmail.com</a>
+        <a href="https://www.instagram.com/mrudhula_actress/?hl=en/" target="_blank" rel="noopener">📸 https://www.instagram.com/mrudhula_actress</a>
+        <span>Hyderabad, India</span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Mrudhula Reddy · Acting Portfolio</div></footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
